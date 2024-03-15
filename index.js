@@ -7,29 +7,22 @@ welcomeMessage();
 const displayWorkoutRoutine = () => {
     const workoutInput = document.querySelector('#workoutInput').value;
     const workoutList = document.querySelector('#workoutList');
-    const newWorkout = document.createElement('li');
-    newWorkout.textContent = workoutInput;
-    workoutList.appendChild(newWorkout);
+    duplicated(workoutInput,workoutList);
 };
 
 document.querySelector('#submitWorkout').addEventListener('click', displayWorkoutRoutine);
 
-// ⚠️⚠️⚠️ Lesson 3: Creating and Removing Elements ⚠️⚠️⚠️
-// Function to add new fitness goals and remove completed ones
-// NOW LET'S DEBUG TO PREVENT DUPLICATE GOALS FROM BEING SUBMITTED 🚀
 
-const addNewGoal = () => {
-    const goalInput = document.querySelector('#goalInput').value;
-    const goalList = document.querySelector('#goalList');
-     
-
-    const listOfGoals = Array.from(goalList.children); // create array from existing goals listed
+// duplicates function
+const duplicated = (input,itemList)=>{
+    
+    const listOfItems = Array.from(itemList.children); // create array from existing goals listed
     let isDuplicate = false;
 
     //check for duplicates
-    for(let goal of listOfGoals){
+    for(let item of listOfItems){
 
-        if (goal.textContent === goalInput) { 
+        if (item.textContent === input) { 
             isDuplicate = true;
             break;
         }
@@ -38,16 +31,21 @@ const addNewGoal = () => {
   
     //Prevent duplicates
     if (isDuplicate){
-        //display this meessage if goal is duplicated
-        alert("Goal already exists!");  
+        //display this meessage if item is duplicated
+        alert("Item already exists!");  
 
     } else{
-        const newGoal = document.createElement('li');
-        newGoal.textContent = goalInput;
-        goalList.appendChild(newGoal);
+        const newItem = document.createElement('li');
+        newItem.textContent = input;
+        itemList.appendChild(newItem);
     }
      // Event listener to remove items when clicked
-    
+}
+
+const addNewGoal = () => {
+    const goalInput = document.querySelector('#goalInput').value;
+    const goalList = document.querySelector('#goalList');
+    duplicated(goalInput,goalList); //calls function that checks and prevents duplicates
     
 };
 
