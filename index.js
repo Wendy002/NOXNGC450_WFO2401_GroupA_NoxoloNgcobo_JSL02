@@ -37,7 +37,8 @@ const addNewGoal = () => {
 
   
     //Prevent duplicates
-    if(isDuplicate){
+    if (isDuplicate){
+        //display this meessage if goal is duplicated
         alert("Goal already exists!");  
 
     } else{
