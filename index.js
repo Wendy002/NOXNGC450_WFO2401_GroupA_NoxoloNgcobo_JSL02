@@ -27,7 +27,6 @@ const duplicated = (input,itemList)=>{
             break;
         }
     }
-
   
     //Prevent duplicates
     if (isDuplicate){
@@ -41,6 +40,8 @@ const duplicated = (input,itemList)=>{
     }
      // Event listener to remove items when clicked
 }
+
+
 
 const addNewGoal = () => {
     const goalInput = document.querySelector('#goalInput').value;
@@ -81,3 +82,12 @@ const submitMealPlan = (event) => {
 };
 
 document.querySelector('#mealPlanForm').addEventListener('submit', submitMealPlan);
+
+//----------------- Learnt new concepts-----------------
+// array.from() which creates an array from what you specify
+// arrow functions
+// code refactoring
+
+//--------Struggles---------
+// I used for loop to loop through the list of items 
+//but that didnt work until I Learnt about array.from and ul.children
