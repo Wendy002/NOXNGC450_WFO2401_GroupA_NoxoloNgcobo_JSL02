@@ -40,12 +40,14 @@ const addNewGoal = () => {
         if(goalList[i] === goalInput){
             alert("Goal already exists!");
 
+        } else{
+            const newGoal = document.createElement('li');
+            newGoal.textContent = goalInput;
+            goalList.appendChild(newGoal);
         }
 
     }
-    const newGoal = document.createElement('li');
-    newGoal.textContent = goalInput;
-    goalList.appendChild(newGoal);
+    
 };
 
 // Add event listener to the goal submit button
