@@ -24,13 +24,20 @@ const addNewGoal = () => {
      
 
     const listOfGoals = Array.from(goalList.children); // create array from existing goals listed
+    let isDuplicate = false;
 
+    //check for duplicates
+    for(let goal of listOfGoals){
 
-
+        if (goal.textContent === goalInput) { 
+            isDuplicate = true;
+            break;
+        }
+    }
 
   
     //Prevent duplicates
-    if(goalList.children[i] === goalInput){
+    if(isDuplicate){
         alert("Goal already exists!");  
 
     } else{
