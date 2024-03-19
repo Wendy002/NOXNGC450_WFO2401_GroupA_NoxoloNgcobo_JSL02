@@ -22,7 +22,7 @@ const duplicated = (input,itemList)=>{
     //check for duplicates
     for(let item of listOfItems){
 
-        if (item.textContent === input) { 
+        if (item.textContent.toLowerCase() === input.toLowerCase()) { 
             isDuplicate = true;
             break;
         }
